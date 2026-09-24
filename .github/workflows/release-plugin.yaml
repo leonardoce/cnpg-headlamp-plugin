@@ -79,7 +79,7 @@ jobs:
         run: echo "value=$(date +'%Y-%m-%dT%H:%M:%SZ')" >> $GITHUB_OUTPUT
 
       - name: Update artifacthub-pkg.yml
-        uses: fjogeleit/yaml-update-action@v0.16.1
+        uses: fjogeleit/yaml-update-action@v0.17.0
         with:
           valueFile: artifacthub-pkg.yml
           changes: |
@@ -101,7 +101,7 @@ jobs:
           git push origin main
 
       - name: Attach tarball to GitHub release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           tag_name: ${{ steps.version.outputs.tag }}
           prerelease: false
